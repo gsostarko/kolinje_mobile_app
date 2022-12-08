@@ -1,0 +1,85 @@
+MDScreen:
+    name: "MainScreen"
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDBottomNavigation:
+            name: "HomeScreen"
+
+            #Home navigation item
+            MDBottomNavigationItem:
+                icon: 'pig-variant-outline'
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            padding: '20dp'
+                            adaptive_height: True
+                            MDLabel: 
+                                text:"Home Screen"
+                                font_style:"H4"
+                                pos_hint: {"center_x": 0.5}
+                                adaptive_height: True
+            
+            #Moji recepti navigation item
+            MDBottomNavigationItem:
+                icon: 'shaker'
+                name: "ReceptiScreen"
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            padding: '20dp'
+                            adaptive_height: True
+                            MDLabel: 
+                                text:"Moji recepti"
+                                font_style:"H4"
+                                pos_hint: {"center_x": 0.5}
+                                adaptive_height: True
+
+                            MDIconButton:
+                                pos_hint: {'right': 1, 'top': 1}
+                                icon: "plus-circle-outline"
+                                on_release: app.ChangeScreen(screen_name = "Recepies")
+
+
+                            MDCard:
+                                pos_hint: {'center': 1, 'top': 1}
+                                size_hint: None, None
+                                size: "280dp", "180dp"
+                                elevation: 1.5
+                                padding: 25
+                                spacing: 25
+                                border_radius: 7
+                                orientation: "vertical"    
+                                
+                                MDLabel:
+                                    text: "Recept id:"
+
+                                MDIconButton:
+                                    pos_hint: {'left': 1, 'bottom': 1}
+                                    icon: "pencil"
+                                
+                                    
+            
+            #Moja kolinja navigation item
+            MDBottomNavigationItem:
+                name: "KolinjaScreen"
+                icon: 'knife'
+                MDScreen:
+                    ScrollView:
+                        bar_width:0
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            padding: '20dp'
+                            adaptive_height: True
+                            MDLabel: 
+                                text:"Moja kolinja"
+                                font_style:"H4"
+                                pos_hint: {"center_x": 0.5}
+                                adaptive_height: True
+            
+            

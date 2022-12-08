@@ -1,0 +1,76 @@
+MDScreen:
+    name: "Recepies"
+    id: recepie_screen
+
+    ScrollView:
+        bar_width:0
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: '20dp'
+            adaptive_height: True
+
+            MDLabel: 
+                text:"Dodaj novi recept"
+                font_style:"H4"
+                adaptive_height: True
+            
+            MDIconButton:
+                pos_hint: {'left': 1, 'top': 1}
+                icon: "arrow-left"
+                on_release: app.ChangeScreen(screen_name = "MainScreen")
+            
+            MDTextField:
+                id: "naziv_recepta"
+                hint_text: "Naziv recepta"
+                size_hint_x: None
+                width: 250
+                font_size: 18
+                pos_hint: {"center_x": 0.5}
+            
+            MDTextField:
+                id: "sol"
+                hint_text: "Sol (%)"
+                size_hint_x: None
+                width: 250
+                font_size: 18
+                pos_hint: {"center_x": 0.5}
+            
+            MDTextField:
+                id: "papar"
+                hint_text: "Papar (%)"
+                size_hint_x: None
+                width: 250
+                font_size: 18
+                pos_hint: {"center_x": 0.5}
+            
+            MDTextField:
+                id: "ljuta_paprika"
+                hint_text: "Ljuta paprika (%)"
+                size_hint_x: None
+                width: 250
+                font_size: 18
+                pos_hint: {"center_x": 0.5}
+            
+            MDTextField:
+                id: "slatka_paprika"
+                hint_text: "Slatka paprika (%)"
+                size_hint_x: None
+                width: 250
+                font_size: 18
+                pos_hint: {"center_x": 0.5}
+            
+            MDTextField:
+                id: "bijeli_luk"
+                hint_text: "Bijeli luk (%)"
+                size_hint_x: None
+                width: 250
+                font_size: 18
+                pos_hint: {"center_x": 0.5}
+
+            MDFloatingActionButton:
+                icon: "content-save"
+                md_bg_color: app.theme_cls.primary_color
+                pos_hint: {"center_x": 0.5}
+                padding_y: 15
+                

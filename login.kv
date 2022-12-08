@@ -47,6 +47,7 @@ MDScreen:
             md_bg_color: app.theme_cls.primary_color
             pos_hint: {"center_x": 0.5}
             padding_y: 15
+            on_release: app.root.current = "MainScreen"
 
         MDLabel:
             id: welcome_label

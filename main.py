@@ -3,6 +3,7 @@ from kivy.core.window import Window
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.toast import toast
+from kivy.clock import Clock
 
 # CUSTOM LIBRARIES
 from database import DatabaseManagement
@@ -20,10 +21,15 @@ class KolinjeApp(MDApp):
         self.theme_cls.primary_palette = "Red"
         self.title = "KolinjeApp"
 
+        screen_manager.add_widget(Builder.load_file('splash.kv'))
         screen_manager.add_widget(Builder.load_file('login.kv'))
         screen_manager.add_widget(Builder.load_file('register.kv'))
+        screen_manager.add_widget(Builder.load_file('main.kv'))
+        screen_manager.add_widget(Builder.load_file('recepies.kv'))
 
         return screen_manager 
+
+    
 
     def NewUserRegistration(self):
         #Calling specific screen
@@ -55,6 +61,11 @@ class KolinjeApp(MDApp):
     def ChangeScreen(self, screen_name):
         screen_manager.current = str(screen_name)
 
+
+    def on_start(self):
+        Clock.schedule_once(self.change_splash, 5)
+    def change_splash(self, x):
+        screen_manager.current = "LoginScreen"
 
 if __name__ == "__main__":
     KolinjeApp().run()
