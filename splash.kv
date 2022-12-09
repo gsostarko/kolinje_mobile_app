@@ -1,8 +1,14 @@
 MDScreen:
     name: "Splash"
     id: splash_screen
-    
-    Image: 
-        source:"img/kolinje_logo.png"
-        size: 50,50
-        #pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 20
+
+        Image: 
+            id: logo_img
+            source:"img/kolinje_logo.png"
+            size_hint: 1,1
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}

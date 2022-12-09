@@ -21,6 +21,7 @@ MDScreen:
             padding_y: 15
 
         MDTextField:
+            id:username
             hint_text: "korisničko ime"
             helper_text: "Unesite svoje korisničko ime."
             helper_text_mode: "on_focus"
@@ -46,6 +47,13 @@ MDScreen:
             icon: "login-variant"
             md_bg_color: app.theme_cls.primary_color
             pos_hint: {"center_x": 0.5}
+            padding_y: 15
+            on_release: app.UserLogin()
+
+        MDFloatingActionButton:
+            icon: "login-variant"
+            md_bg_color: app.theme_cls.primary_color
+            pos_hint: {"center_x": 0.1}
             padding_y: 15
             on_release: app.root.current = "MainScreen"
 

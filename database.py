@@ -30,7 +30,35 @@ class DatabaseManagement():
         'username': username,
         'email': email,
         'password': password,
-        'datum_registracije': date_time_format
+        'datum_registracije': date_time_format,
+        'name': ''
         }
         
         return db.korisnici.insert_one(user)
+
+class DatabaseQuery():
+    def LoginQuery(username, password):
+        db = client.get_database('kolinje')
+        collection = db.get_collection('korisnici')
+        filter = {'username': username}
+
+        podaci = collection.find(filter)
+        korisnici_temp = []
+        for each_doc in podaci:
+            korisnici_temp.append(each_doc)
+        print(korisnici_temp)
+        #print(korisnici_temp[0])
+        
+        try:
+            loged_in_user = korisnici_temp[0]['username']
+            loged_in_password = korisnici_temp[0]['password']
+        
+            if loged_in_user == username and loged_in_password == password:
+        
+                print(loged_in_user, loged_in_password)
+
+                return True, loged_in_user
+            else:
+                return False, None
+        except:
+            return False, None
