@@ -21,7 +21,7 @@ MDScreen:
                 on_release: app.ChangeScreen(screen_name = "MainScreen")
             
             MDTextField:
-                id: "naziv_recepta"
+                id: naziv_recepta
                 hint_text: "Naziv recepta"
                 size_hint_x: None
                 width: 250
@@ -29,7 +29,7 @@ MDScreen:
                 pos_hint: {"center_x": 0.5}
             
             MDTextField:
-                id: "sol"
+                id: sol
                 hint_text: "Sol (%)"
                 size_hint_x: None
                 width: 250
@@ -37,7 +37,7 @@ MDScreen:
                 pos_hint: {"center_x": 0.5}
             
             MDTextField:
-                id: "papar"
+                id: papar
                 hint_text: "Papar (%)"
                 size_hint_x: None
                 width: 250
@@ -45,7 +45,7 @@ MDScreen:
                 pos_hint: {"center_x": 0.5}
             
             MDTextField:
-                id: "ljuta_paprika"
+                id: ljuta_paprika
                 hint_text: "Ljuta paprika (%)"
                 size_hint_x: None
                 width: 250
@@ -53,7 +53,7 @@ MDScreen:
                 pos_hint: {"center_x": 0.5}
             
             MDTextField:
-                id: "slatka_paprika"
+                id: slatka_paprika
                 hint_text: "Slatka paprika (%)"
                 size_hint_x: None
                 width: 250
@@ -61,7 +61,7 @@ MDScreen:
                 pos_hint: {"center_x": 0.5}
             
             MDTextField:
-                id: "bijeli_luk"
+                id: bijeli_luk
                 hint_text: "Bijeli luk (%)"
                 size_hint_x: None
                 width: 250
@@ -73,4 +73,5 @@ MDScreen:
                 md_bg_color: app.theme_cls.primary_color
                 pos_hint: {"center_x": 0.5}
                 padding_y: 15
+                on_release: app.newRecepie()
                 
