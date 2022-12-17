@@ -1,12 +1,10 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
+import api_keys
 
 from supabase import create_client
 
-uri = os.environ.get("SUPABASE_URL")
-key = os.environ.get("SUPABASE_KEY")
+uri = api_keys.SUPABASE_URL
+key = api_keys.SUPABASE_KEY
 
 supabase = create_client(uri, key)
 
